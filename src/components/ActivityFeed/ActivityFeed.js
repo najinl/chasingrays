@@ -5,8 +5,6 @@ import './ActivityFeed.css';
 
 
 const ActivityFeed = ({ selectedActivity }) => {
-  // let randomTrailData = selectedActivity.sort(() => Math.random() - Math.random()).slice(0, 4);
-
   let trailData = [];
 
   trailData = selectedActivity.map(trail => {
@@ -14,6 +12,7 @@ const ActivityFeed = ({ selectedActivity }) => {
       <ActivityCard
         trail={trail.trail}
         city={trail.city}
+        weather={trail.weather}
       />
     )
   })
