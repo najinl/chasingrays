@@ -1,6 +1,6 @@
 header {
   background-color: #39395f;
-  height: 10%;
+  height: 6rem;
   display: flex;
 }
 
@@ -9,7 +9,6 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  /* height: 90%; */
   color: white;
   font-size: 2em;
   font-weight: bold;
@@ -17,13 +16,12 @@ header {
 
 .top-logo {
   display: flex;
-  /* border: 1px solid red; */
   height: 50%;
 }
+
 .bottom-logo {
   display: flex;
   height: 50%;
-  /* border: 1px solid green; */
 }
 
 p {
@@ -36,5 +34,4 @@ p {
   background-repeat: no-repeat;
   height: 90%;
   width: 90%;
-  /* border: 1px solid yellow; */
 }
