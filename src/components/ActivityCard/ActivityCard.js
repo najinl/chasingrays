@@ -3,7 +3,7 @@ import WeatherCard from '../WeatherCard/WeatherCard';
 import './ActivityCard.css';
 
 
-const ActivityCard = ({ trail, city, weather }) => {
+const ActivityCard = ({ trail, city, weather, addToFavorites }) => {
   let filteredWeather = [];
   const todayFull = new Date()
   const todayShort = todayFull.toISOString().split('T')[0]
@@ -16,7 +16,7 @@ const ActivityCard = ({ trail, city, weather }) => {
     <div className="activity-container">
       <section className="trail-title">
         <h3>{trail}</h3>
-        <button>❤️</button>
+        <button onClick={() => addToFavorites({trail: trail, city: city})}>❤️</button>
       </section>
       <p>{`${city}, Colorado`}</p>
       <WeatherCard filteredWeather={filteredWeather}/>
