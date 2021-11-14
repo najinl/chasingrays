@@ -4,22 +4,37 @@ import ActivityCard from '../ActivityCard/ActivityCard';
 import './ActivityFeed.css';
 
 
-const ActivityFeed = ({ selectedActivity }) => {
+const ActivityFeed = ({ selectedActivity, currentActivity, bikingOptions, hikingOptions }) => {
   let trailData = [];
+  console.log(currentActivity)
 
-  trailData = selectedActivity.map(trail => {
-    return (
-      <ActivityCard
-        trail={trail.trail}
-        city={trail.city}
-        weather={trail.weather}
-      />
-    )
-  })
+  if(currentActivity === 'Mountain Biking') {
+    trailData = bikingOptions.map(trail => {
+      return (
+        <ActivityCard
+          trail={trail.trail}
+          city={trail.city}
+          weather={trail.weather}
+          key={Math.random()}
+        />
+      )
+    })
+  } else if(currentActivity === 'Hiking') {
+    trailData = hikingOptions.map(trail => {
+      return (
+        <ActivityCard
+          trail={trail.trail}
+          city={trail.city}
+          weather={trail.weather}
+          key={Math.random()}
+        />
+      )
+    })
+  }
 
   return (
     <div className="activities-container">
-      {trailData}
+      { trailData }
     </div>
   )
 }

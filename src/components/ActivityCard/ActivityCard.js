@@ -14,7 +14,10 @@ const ActivityCard = ({ trail, city, weather }) => {
   console.log(filteredWeather)
   return (
     <div className="activity-container">
-      <h3>{trail}</h3>
+      <section className="trail-title">
+        <h3>{trail}</h3>
+        <button>❤️</button>
+      </section>
       <p>{`${city}, Colorado`}</p>
       <WeatherCard filteredWeather={filteredWeather}/>
     </div>

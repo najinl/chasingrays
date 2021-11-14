@@ -1,14 +1,15 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Activities.css';
 
-const Activities = ({ updateActivity }) => {
-  const history = useHistory();
+const Activities = ({ setActivity, updateActivity }) => {
+  // const history = useHistory();
   const activities = ['Climbing', 'Hiking', 'Mountain Biking'];
 
-  const submitActivity = () => {
-    history.push("/activity");
-  }
+  // const updateActivity = (activity) => {
+  //   setActivity(activity)
+  // }
 
   const activitySelections = activities.map(activity => {
     return (
@@ -23,9 +24,6 @@ const Activities = ({ updateActivity }) => {
       <section className='activities'>
         {activitySelections}
       </section>
-      <div className="continue-option">
-        <button className="continue-btn" onClick={submitActivity}>Continue ➡</button>
-      </div>
     </div>
   )
 }
