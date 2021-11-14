@@ -8,7 +8,7 @@ const WeatherCard = ({ filteredWeather }) => {
 
   dailyWeather = filteredWeather.map(day => {
     return (
-        <div className="day-card">
+        <div className="day-card" key={Math.random()}>
             <div className="date">
               <div className="day-of-week">{day.name.substring(0,3)}</div>
               <div className="day">{day.startTime.substring(8,10)}</div>

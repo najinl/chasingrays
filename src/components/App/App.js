@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {Route, Switch } from 'react-router-dom';
+import {Route, Switch, useHistory } from 'react-router-dom';
 import { getWeather } from '../../apiCalls';
 import { noaaGridLocales, bikingTrails, hikingTrails } from '../../Models.js';
 import Header from '../Header/Header'
@@ -12,7 +12,8 @@ function App() {
   const [selectedActivity, setSelectedActivity] = useState([]);
   const [bikingOptions, setBikingOptions] = useState([]);
   const [hikingOptions, setHikingOptions] = useState([]);
-  // const [allLocalesWeather, setAllLocalesWeather] = useState([]);
+  const [climbingOptions, setClimbingOptions] = useState([]);
+  const history = useHistory();
 
   useEffect(() => {
     getWeather(noaaGridLocales).then(data => {
@@ -24,42 +25,42 @@ function App() {
         trail.weather = data[i].properties.periods
         return trail
       })
-      // setAllLocalesWeather(data)
       setBikingOptions(populatedBikingTrails)
       setHikingOptions(populateHikingTrails)
     });
   },[])
 
-  const randomTrailData = (selectedActivity) => {
-    return selectedActivity.sort(() => Math.random() - Math.random()).slice(0, 4);
-  }
 
-  const updateActivity = (chosenActivity) => {
-    let randomTrails;
-    if(chosenActivity === 'Mountain Biking') {
-      randomTrails = randomTrailData(bikingOptions)
-      setSelectedActivity(randomTrails)
-    } else if(chosenActivity === 'Hiking') {
-      randomTrails = randomTrailData(hikingOptions)
-      setSelectedActivity(randomTrails)
-    }
-    console.log('shit')
-  }
-
-  // const submitActivity = () => {
-  //   if(currentActivity !== 'Mountain Biking') {
-  //     history.push(`/${currentActivity.toLowerCase()}`);
-  //   }
-  //   history.push(`/${currentActivity.split(' ').join('-')}`)
+  // const randomTrailData = (selectedActivity) => {
+  //   return selectedActivity.sort(() => Math.random() - Math.random()).slice(0, 4);
   // }
 
+  const updateActivity = (chosenActivity) => {
+    console.log('currActivity:', currentActivity)
+    let randomTrails;
+    if(chosenActivity === 'Mountain Biking') {
+      setSelectedActivity(randomTrails)
+    } else if(chosenActivity === 'Hiking') {
+      setSelectedActivity(randomTrails)
+    }
+    visitActivityPage(chosenActivity)
+  }
+
+
+  const visitActivityPage = (activity) => {
+    setActivity(activity)
+    history.push(`/${activity}`)
+  }
+
   console.log(selectedActivity)
-  // console.log(bikingOptions)
+  // console.log(currentActivity)
+  console.log(bikingOptions)
   // console.log('hiking options', hikingOptions)
   // console.log('allLocales:', allLocalesWeather)
   return (
     <div className="app-container">
       <Header />
+      <Switch>
       <Route exact path="/" render={() => {
         return (
           <Activities
@@ -68,12 +69,18 @@ function App() {
         )
       }}
       />
-      <Route exact path="/activity" render={() => {
+      <Route exact path="/:activity" render={({ match } ) => {
         return (
-          <ActivityFeed selectedActivity={selectedActivity}/>
+          <ActivityFeed
+          selectedActivity={selectedActivity}
+          currentActivity={match.params.activity}
+          bikingOptions={bikingOptions}
+          hikingOptions={hikingOptions}
+          />
         )
       }}
       />
+      </Switch>
     </div>
   );
 }
