@@ -1,0 +1,32 @@
+.day-card {
+  display: flex;
+  height: 100px;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1em;
+  /* border: solid 2px red; */
+  background-color: #a9c25d;
+  border-radius: 1em;
+  margin: 0.5em;
+
+}
+
+.date {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: 1.2em;
+  /* border: solid 2px black; */
+  /* margin-left: 4%; */
+}
+
+.temperature {
+  /* margin-left: 20%; */
+  margin: 15px;
+}
+
+.weather-img {
+  height: 4em;
+  width: 4em;
+}

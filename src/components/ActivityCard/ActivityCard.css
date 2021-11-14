@@ -1,0 +1,5 @@
+.acivity-container {
+  display: flex;
+  flex-direction: column;
+  /* background-color: #a9c25d; */
+}
