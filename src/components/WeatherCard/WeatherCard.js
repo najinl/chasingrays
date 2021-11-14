@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './WeatherCard.css';
 
 
 const WeatherCard = ({ filteredWeather }) => {
@@ -8,11 +8,15 @@ const WeatherCard = ({ filteredWeather }) => {
 
   dailyWeather = filteredWeather.map(day => {
     return (
-      <>
-        <p>{day.name.substring(0,3)}</p>
-        <p>{day.shortForecast}</p>
-        <p>{`${day.temperature}°${day.temperatureUnit}`}</p>
-      </>
+        <div className="day-card">
+            <div className="date">
+              <div className="day-of-week">{day.name.substring(0,3)}</div>
+              <div className="day">{day.startTime.substring(8,10)}</div>
+            </div>
+            <div className="temperature">{`${day.temperature}°${day.temperatureUnit}`}</div>
+            <img className="weather-img" src={day.icon} alt="representative weather image"/>
+            <div className="short-forecast">{day.shortForecast}</div>
+        </div>
     )
   })
 

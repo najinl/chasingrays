@@ -1,6 +1,6 @@
 import React from 'react';
 import WeatherCard from '../WeatherCard/WeatherCard';
-// import { Link } from 'react-router-dom';
+import './ActivityCard.css';
 
 
 const ActivityCard = ({ trail, city, weather }) => {
