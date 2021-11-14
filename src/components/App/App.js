@@ -15,7 +15,7 @@ function App() {
   const [hikingOptions, setHikingOptions] = useState([]);
   const [climbingOptions, setClimbingOptions] = useState([]);
   const [favorites, setFavorites] = useState([])
-  const [retrievedFavorites, getFavorites]= useState([]);
+  // const [retrievedFavorites, getFavorites]= useState([]);
   const history = useHistory();
 
   useEffect(() => {
@@ -32,10 +32,6 @@ function App() {
       setHikingOptions(populateHikingTrails)
     });
   },[])
-
-  // const randomTrailData = (selectedActivity) => {
-  //   return selectedActivity.sort(() => Math.random() - Math.random()).slice(0, 4);
-  // }
 
   const updateActivity = (chosenActivity) => {
     console.log('currActivity:', currentActivity)
@@ -74,8 +70,7 @@ function App() {
   console.log(selectedActivity)
   // console.log(currentActivity)
   console.log(bikingOptions)
-  // console.log('hiking options', hikingOptions)
-  // console.log('allLocales:', allLocalesWeather)
+
   return (
     <div className="app-container">
       <Header />
@@ -101,7 +96,7 @@ function App() {
       }}
       />
       <Route exact path="/favorite" render={() => {
-        <FavoriteFeed />
+        <FavoriteFeed favorites={favorites}/>
       }}
       />
       </Switch>

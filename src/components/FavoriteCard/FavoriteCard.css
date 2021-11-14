@@ -1,0 +1,15 @@
+.activity-container {
+  display: flex;
+  flex-direction: column;
+  /* background-color: #416a59; */
+  background-color: #39395f;
+  color: white;
+  margin: 1em;
+  border-radius: 0.75em;
+}
+
+.trail-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
