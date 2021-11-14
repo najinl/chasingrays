@@ -4,7 +4,7 @@ import ActivityCard from '../ActivityCard/ActivityCard';
 import './ActivityFeed.css';
 
 
-const ActivityFeed = ({ selectedActivity, currentActivity, bikingOptions, hikingOptions }) => {
+const ActivityFeed = ({ selectedActivity, currentActivity, bikingOptions, hikingOptions, addToFavorites }) => {
   let trailData = [];
   console.log(currentActivity)
 
@@ -15,6 +15,7 @@ const ActivityFeed = ({ selectedActivity, currentActivity, bikingOptions, hiking
           trail={trail.trail}
           city={trail.city}
           weather={trail.weather}
+          addToFavorites={addToFavorites}
           key={Math.random()}
         />
       )
@@ -26,6 +27,7 @@ const ActivityFeed = ({ selectedActivity, currentActivity, bikingOptions, hiking
           trail={trail.trail}
           city={trail.city}
           weather={trail.weather}
+          addToFavorites={addToFavorites}
           key={Math.random()}
         />
       )
