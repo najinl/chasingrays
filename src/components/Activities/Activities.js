@@ -6,11 +6,11 @@ const Activities = ({ setActivity, updateActivity }) => {
 
   const activitySelections = activities.map(activity => {
     return (
-      <>
+      <div key={Math.random()}>
         <h2>{activity}</h2>
         <button className={`cy-activity-btn ${activity.toLowerCase()}-btn`} key={activity} onClick={() => updateActivity(activity)}>
         </button>
-      </>
+      </div>
     )
   })
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {Route, Switch, useHistory } from 'react-router-dom';
 import { getWeather } from '../../apiCalls';
-import { noaaGridLocales, bikingTrails, hikingTrails } from '../../Models.js';
+import { noaaGridLocales, bikingTrails, hikingTrails, climbingAreas } from '../../Models.js';
 import Header from '../Header/Header'
 import Activities from '../Activities/Activities';
 import ActivityFeed from '../ActivityFeed/ActivityFeed';
@@ -10,7 +10,6 @@ import './App.css';
 
 function App() {
   const [currentActivity, setActivity] = useState('');
-  const [selectedActivity, setSelectedActivity] = useState([]);
   const [bikingOptions, setBikingOptions] = useState([]);
   const [hikingOptions, setHikingOptions] = useState([]);
   const [climbingOptions, setClimbingOptions] = useState([]);
@@ -21,25 +20,23 @@ function App() {
     getWeather(noaaGridLocales).then(data => {
       const populatedBikingTrails = bikingTrails.map((trail, i) => {
         trail.weather = data[i].properties.periods
-        return trail
+        return trail;
       })
       const populateHikingTrails = hikingTrails.map((trail, i) => {
         trail.weather = data[i].properties.periods
-        return trail
+        return trail;
+      })
+      const populateClimbingAreas = climbingAreas.map((area, i) => {
+        area.weather = data[i].properties.periods
+        return area;
       })
       setBikingOptions(populatedBikingTrails)
       setHikingOptions(populateHikingTrails)
+      setClimbingOptions(populateClimbingAreas)
     });
   },[])
 
   const updateActivity = (chosenActivity) => {
-    console.log('currActivity:', currentActivity)
-    let randomTrails;
-    if(chosenActivity === 'Mountain Biking') {
-      setSelectedActivity(randomTrails)
-    } else if(chosenActivity === 'Hiking') {
-      setSelectedActivity(randomTrails)
-    }
     visitActivityPage(chosenActivity)
   }
 
@@ -70,7 +67,8 @@ function App() {
       <Switch>
       <Route exact path="/" render={() => {
         return (
-          <Activities updateActivity={updateActivity}/>
+          <Activities
+          updateActivity={updateActivity}/>
         )
       }}
       />
@@ -86,6 +84,7 @@ function App() {
           currentActivity={match.params.activity}
           bikingOptions={bikingOptions}
           hikingOptions={hikingOptions}
+          climbingOptions={climbingOptions}
           addToFavorites={addToFavorites}
           />
         )
