@@ -70,17 +70,13 @@ At any moment the user is able to navigate back to the home page and choose anot
 
 ## Project Demo
 
-**Choose an Activity**
+**Choose an Activity & View Trail/Crag Options**
 
-![Home Screen](insert link)
-
-**View Trail/Crag Options & Favorite**
-
-<img src="https://media.giphy.com/media/nh2H2pnONWGMVcf6Vd/giphy.gif" width="600"/>
+<img src="https://media.giphy.com/media/nh2H2pnONWGMVcf6Vd/giphy.gif" width="350" height="500"/>
 
 **View Favorites/Remove from Favorites**
 
-![Favorites Page](insert link)
+<img src="https://media.giphy.com/media/bFu16SXtFn15gQ3jqx/giphy.gif" width="350" height="500"/>
 
 ## Contributors
 
