@@ -76,7 +76,7 @@ At any moment the user is able to navigate back to the home page and choose anot
 
 **View Trail/Crag Options & Favorite**
 
-![Activity Feed](insert link)
+<iframe src="https://giphy.com/embed/nh2H2pnONWGMVcf6Vd" width="270" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/nh2H2pnONWGMVcf6Vd">via GIPHY</a></p>
 
 **View Favorites/Remove from Favorites**
 
