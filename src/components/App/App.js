@@ -13,7 +13,8 @@ function App() {
   const [bikingOptions, setBikingOptions] = useState([]);
   const [hikingOptions, setHikingOptions] = useState([]);
   const [climbingOptions, setClimbingOptions] = useState([]);
-  const [favorites, setFavorites] = useState([])
+  const [favorites, setFavorites] = useState([]);
+  const [error, setError] = useState('');
   const history = useHistory();
 
   useEffect(() => {
@@ -33,7 +34,8 @@ function App() {
       setBikingOptions(populatedBikingTrails)
       setHikingOptions(populateHikingTrails)
       setClimbingOptions(populateClimbingAreas)
-    });
+    })
+    .catch(err => setError('ughhh, we are having issues! Working on it.'))
   },[])
 
   const updateActivity = (chosenActivity) => {
@@ -46,7 +48,6 @@ function App() {
     if(!localHistory) {
       localStorage.setItem('favoritesHistory', JSON.stringify([favoritedTrail]));
       let favoritedHistory = localStorage.getItem('favoritesHistory');
-      console.log(JSON.parse(favoritedHistory))
       setFavorites(JSON.parse(favoritedHistory))
     } else if(localHistory && !matchingTrail) {
       let favoritedHistory = JSON.parse(localStorage.getItem('favoritesHistory'))
@@ -66,6 +67,11 @@ function App() {
       <Header />
       <Switch>
       <Route exact path="/" render={() => {
+        if(error) {
+          return (
+            <p>{error}</p>
+          )
+        }
         return (
           <Activities
           updateActivity={updateActivity}/>

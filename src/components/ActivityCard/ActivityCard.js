@@ -12,7 +12,7 @@ const ActivityCard = ({ trail, city, weather, addToFavorites }) => {
   filteredWeather = weather.filter(day => {
     return (!day.name.includes('Night') && !day.name.includes('Tonight') && day.startTime > todayShort)
   })
-  console.log(filteredWeather)
+
   return (
     <div className="activity-container">
       <section className="trail-title">
