@@ -4,7 +4,6 @@ import './WeatherCard.css';
 
 const WeatherCard = ({ filteredWeather }) => {
   let dailyWeather=[];
-  // console.log(filteredWeather)
 
   dailyWeather = filteredWeather.map(day => {
     return (

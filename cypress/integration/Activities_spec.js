@@ -1,4 +1,4 @@
-describe('Home landing/Activities', () => {
+describe('Home landing and Activities', () => {
   beforeEach(() => {
     cy.intercept('https://api.weather.gov/gridpoints/BOU/54,62/forecast', {fixture: 'noaa-fetch-golden-co'})
     cy.intercept('https://api.weather.gov/gridpoints/BOU/46,80/forecast', {fixture: 'noaa-fetch-boulder-co'})
