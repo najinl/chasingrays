@@ -30,6 +30,7 @@
   width: 15rem;
   height: 6rem;
   margin-bottom: 15px;
+  cursor: pointer;
 }
 
 .continue-option {

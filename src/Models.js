@@ -117,3 +117,61 @@ export const hikingTrails = [
     weather: null
   }
 ]
+  export const climbingAreas = [
+    {
+      trail: 'Tiers of Zion',
+      city: 'Golden',
+      noaaGrid: 'BOU/54,62',
+      type: 'Hiking',
+      weather: null
+    },
+    {
+      trail: 'Eldorado Canyon',
+      city: 'Boulder',
+      noaaGrid: 'BOU/46,80',
+      type: 'Hiking',
+      weather: null
+    },
+    {
+      trail: 'Staunton Ranch Trail',
+      city: 'Pine',
+      noaaGrid: 'BOU/49,46',
+      type: 'Hiking',
+      weather: null
+    },
+    {
+      trail: 'Wolcott Crags',
+      city: 'Vail',
+      noaaGrid: 'GJT/172,120',
+      type: 'Hiking',
+      weather: null
+    },
+    {
+      trail: 'Three Sisters',
+      city: 'Evergreen',
+      noaaGrid: 'BOU/50,57',
+      type: 'Hiking',
+      weather: null
+    },
+    {
+      trail: 'Tenmile Range',
+      city: 'Breckenridge',
+      noaaGrid: 'BOU/25,52',
+      type: 'Hiking',
+      weather: null
+    },
+    {
+      trail: 'The Ameristar Boulder',
+      city: 'Black Hawk',
+      noaaGrid: 'BOU/45,64',
+      type: 'Hiking',
+      weather: null
+    },
+    {
+      trail: 'Unaweep Canyon',
+      city: 'Grand Junction',
+      noaaGrid: 'GJT/94,101',
+      type: 'Hiking',
+      weather: null
+    }
+]

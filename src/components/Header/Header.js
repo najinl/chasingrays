@@ -3,9 +3,9 @@ import { AiFillHome, AiFillHeart } from "react-icons/ai";
 import { Link } from 'react-router-dom';
 import './Header.css';
 
-
 const Header = () => {
-  return(
+
+return(
     <header>
       <div className="logo">
         <div className="top-logo">
@@ -17,9 +17,11 @@ const Header = () => {
         </div>
       </div>
       <section className="nav-container">
-        <AiFillHome/>
         <Link className="favorites-btn" to="/favorites">
-          <AiFillHeart />
+          <AiFillHeart size={42}/>
+        </Link>
+        <Link className="home-btn" to="/">
+          <AiFillHome size={50}/>
         </Link>
       </section>
     </header>
