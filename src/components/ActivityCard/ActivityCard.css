@@ -6,10 +6,32 @@
   color: white;
   margin: 1em;
   border-radius: 0.75em;
+  width: 19rem;
 }
 
 .trail-title {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.heart-btn {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 750px) {
+  .activity-container {
+    width: 21rem;
+  }
+
+  .day-card {
+    width: 18rem;
+    height: 7rem;
+  }
+
+  .city {
+    font-size: 25px;
+    margin-bottom: 0;
+  }
 }

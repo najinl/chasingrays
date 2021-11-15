@@ -3,13 +3,12 @@
   flex-direction: column;
   padding-top: 15px;
   height: 29rem;
+  align-items: center;
 }
 
 .activities {
   display: flex;
-  display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .climbing-btn {
@@ -30,7 +29,7 @@
   border-radius: 1em;
   width: 15rem;
   height: 6rem;
-  margin: 15px;
+  margin-bottom: 15px;
 }
 
 .continue-option {
@@ -50,6 +49,18 @@
 }
 
 h2 {
-  position: absolute;
-  color: white;
+  color: #39395f;
+  text-align: left;
+  margin: 0 0 0 4px;
+}
+
+@media screen and (min-width: 750px) {
+  .cy-activity-btn {
+    width: 25rem;
+    height: 13rem;
+  }
+
+  h2 {
+    font-size: 35px;
+  }
 }

@@ -5,6 +5,7 @@ import { noaaGridLocales, bikingTrails, hikingTrails } from '../../Models.js';
 import Header from '../Header/Header'
 import Activities from '../Activities/Activities';
 import ActivityFeed from '../ActivityFeed/ActivityFeed';
+import FavoriteFeed from '../FavoriteFeed/FavoriteFeed';
 import './App.css';
 
 function App() {
@@ -13,6 +14,8 @@ function App() {
   const [bikingOptions, setBikingOptions] = useState([]);
   const [hikingOptions, setHikingOptions] = useState([]);
   const [climbingOptions, setClimbingOptions] = useState([]);
+  const [favorites, setFavorites] = useState([])
+  // const [retrievedFavorites, getFavorites]= useState([]);
   const history = useHistory();
 
   useEffect(() => {
@@ -30,11 +33,6 @@ function App() {
     });
   },[])
 
-
-  // const randomTrailData = (selectedActivity) => {
-  //   return selectedActivity.sort(() => Math.random() - Math.random()).slice(0, 4);
-  // }
-
   const updateActivity = (chosenActivity) => {
     console.log('currActivity:', currentActivity)
     let randomTrails;
@@ -46,6 +44,21 @@ function App() {
     visitActivityPage(chosenActivity)
   }
 
+  const addToFavorites = (favoritedTrail) => {
+    const matchingTrail = favorites.find(favorited => favorited.trail === favoritedTrail.trail);
+    const localHistory = JSON.parse(localStorage.getItem('favoritesHistory'));
+    if(!localHistory) {
+      localStorage.setItem('favoritesHistory', JSON.stringify([favoritedTrail]));
+      let favoritedHistory = localStorage.getItem('favoritesHistory');
+      console.log(JSON.parse(favoritedHistory))
+      setFavorites(JSON.parse(favoritedHistory))
+    } else if(localHistory && !matchingTrail) {
+      let favoritedHistory = JSON.parse(localStorage.getItem('favoritesHistory'))
+      favoritedHistory.push(favoritedTrail)
+      localStorage.setItem('favoritesHistory', JSON.stringify(favoritedHistory));
+      setFavorites(favoritedHistory)
+    }
+  }
 
   const visitActivityPage = (activity) => {
     setActivity(activity)
@@ -55,17 +68,20 @@ function App() {
   console.log(selectedActivity)
   // console.log(currentActivity)
   console.log(bikingOptions)
-  // console.log('hiking options', hikingOptions)
-  // console.log('allLocales:', allLocalesWeather)
+
   return (
     <div className="app-container">
       <Header />
       <Switch>
       <Route exact path="/" render={() => {
         return (
-          <Activities
-          updateActivity={updateActivity}
-        />
+          <Activities updateActivity={updateActivity}/>
+        )
+      }}
+      />
+      <Route exact path="/favorites" render={() => {
+        return (
+          <FavoriteFeed />
         )
       }}
       />
@@ -76,6 +92,7 @@ function App() {
           currentActivity={match.params.activity}
           bikingOptions={bikingOptions}
           hikingOptions={hikingOptions}
+          addToFavorites={addToFavorites}
           />
         )
       }}

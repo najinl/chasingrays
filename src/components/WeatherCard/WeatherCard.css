@@ -5,7 +5,7 @@
   font-size: 1.1em;
   background-color: #a9c25d;
   border-radius: 1em;
-  margin: 20px 35px;
+  margin: 20px 25px;
   width: 16rem;
   height: 6rem;
   color: black;
@@ -33,8 +33,26 @@
   font-size: 12px;
 }
 
-
 .short-forecast {
   font-size: 13px;
   width: 6rem;
+}
+
+@media screen and (min-width: 750px) {
+  .weather-img {
+    height: 5rem;
+    width: 5rem;
+  }
+
+  .day-of-week {
+    font-size: 18px;
+  }
+
+  .short-forecast {
+    font-size: 16px;
+  }
+
+  .temperature {
+    font-size: 23px;
+  }
 }

@@ -35,3 +35,13 @@ p {
   height: 90%;
   width: 90%;
 }
+
+@media screen and (min-width: 750px) {
+  header {
+    height: 10rem;
+  }
+
+  .app-name {
+    font-size: 3rem;
+  }
+}
