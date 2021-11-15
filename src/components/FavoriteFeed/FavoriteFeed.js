@@ -30,7 +30,7 @@ const FavoriteFeed = () => {
 
   return (
     <div className="favorites-container">
-      { favoriteCards() }
+      { !favorites ? <p>You dont' have any favorites</p> : favoriteCards() }
     </div>
   )
 }
