@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/raychasing/static/css/main.d2f1029a.chunk.css",
+    "main.js": "/raychasing/static/js/main.bfd27448.chunk.js",
+    "main.js.map": "/raychasing/static/js/main.bfd27448.chunk.js.map",
+    "runtime-main.js": "/raychasing/static/js/runtime-main.dbb92ee0.js",
+    "runtime-main.js.map": "/raychasing/static/js/runtime-main.dbb92ee0.js.map",
+    "static/js/2.3884891c.chunk.js": "/raychasing/static/js/2.3884891c.chunk.js",
+    "static/js/2.3884891c.chunk.js.map": "/raychasing/static/js/2.3884891c.chunk.js.map",
+    "static/js/3.a71126d0.chunk.js": "/raychasing/static/js/3.a71126d0.chunk.js",
+    "static/js/3.a71126d0.chunk.js.map": "/raychasing/static/js/3.a71126d0.chunk.js.map",
+    "index.html": "/raychasing/index.html",
+    "static/css/main.d2f1029a.chunk.css.map": "/raychasing/static/css/main.d2f1029a.chunk.css.map",
+    "static/js/2.3884891c.chunk.js.LICENSE.txt": "/raychasing/static/js/2.3884891c.chunk.js.LICENSE.txt",
+    "static/media/Activities.css": "/raychasing/static/media/climber-woman.c68fbd9b.jpeg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.dbb92ee0.js",
+    "static/js/2.3884891c.chunk.js",
+    "static/css/main.d2f1029a.chunk.css",
+    "static/js/main.bfd27448.chunk.js"
+  ]
+}
