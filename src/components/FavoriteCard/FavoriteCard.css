@@ -1,0 +1,16 @@
+.favorite-card {
+  display: flex;
+  border: solid 2px green;
+  justify-content: center;
+}
+
+.favorite-data {
+  display: flex;
+  flex-direction: column;
+}
+
+.remove-favorite-btn {
+  height: 2em;
+  width: 6em;
+  align-self: center;
+}

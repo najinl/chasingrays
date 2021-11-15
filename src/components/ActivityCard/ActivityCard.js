@@ -16,7 +16,7 @@ const ActivityCard = ({ trail, city, weather, addToFavorites }) => {
   return (
     <div className="activity-container">
       <section className="trail-title">
-        <h3>{trail}</h3> 
+        <h3>{trail}</h3>
         <AiOutlineHeart className='heart-btn'onClick={() => addToFavorites({trail: trail, city: city})}/>
       </section>
       <p className="city">{`${city}, Colorado`}</p>

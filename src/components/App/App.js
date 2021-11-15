@@ -71,22 +71,22 @@ function App() {
 
   return (
     <div className="app-container">
+      <Header />
       <Switch>
       <Route exact path="/" render={() => {
         return (
-          <>
-          <Header />
-          <Activities
-          updateActivity={updateActivity}
-        />
-        </>
+          <Activities updateActivity={updateActivity}/>
+        )
+      }}
+      />
+      <Route exact path="/favorites" render={() => {
+        return (
+          <FavoriteFeed />
         )
       }}
       />
       <Route exact path="/:activity" render={({ match } ) => {
         return (
-          <>
-          <Header />
           <ActivityFeed
           selectedActivity={selectedActivity}
           currentActivity={match.params.activity}
@@ -94,16 +94,6 @@ function App() {
           hikingOptions={hikingOptions}
           addToFavorites={addToFavorites}
           />
-          </>
-        )
-      }}
-      />
-      <Route exact path="/favorites" render={() => {
-        return (
-          <>
-          <Header />
-          <FavoriteFeed />
-          </>
         )
       }}
       />

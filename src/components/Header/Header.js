@@ -19,7 +19,7 @@ const Header = () => {
       <section className="nav-container">
         <AiFillHome/>
         <Link className="favorites-btn" to="/favorites">
-          <AiFillHeart/>
+          <AiFillHeart />
         </Link>
       </section>
     </header>

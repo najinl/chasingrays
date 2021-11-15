@@ -1,15 +1,18 @@
 import React from 'react';
-// import WeatherCard from '../WeatherCard/WeatherCard';
+import { AiOutlineMinusCircle  } from "react-icons/ai";
 import './FavoriteCard.css';
 
 
 const FavoriteCard = ({ trail, city }) => {
 
   return (
-    <div className="favorite-container">
-      <h3>{trail}</h3>
-      <p>{`${city}, Colorado`}</p>
-    </div>
+    <section className="favorite-card">
+      <div className="favorite-data">
+        <h3>{trail}</h3>
+        <p>{`${city}, Colorado`}</p>
+      </div>
+      <AiOutlineMinusCircle className="remove-favorite-btn"/>
+    </section>
   )
 }
 
