@@ -77,7 +77,7 @@ At any moment the user is able to navigate back to the home page and choose anot
 **View Trail/Crag Options & Favorite**
 
 <div>
-    <iframe src="https://giphy.com/embed/nh2H2pnONWGMVcf6Vd" width="270" height="480" frameBorder="0" allowFullScreen="allowfullscreen"></iframe>
+    <iframe src="https://giphy.com/gifs/nh2H2pnONWGMVcf6Vd" width="270" height="480" frameBorder="0" allowFullScreen="allowfullscreen"></iframe>
 </div>
 
 **View Favorites/Remove from Favorites**
