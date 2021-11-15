@@ -51,15 +51,13 @@ function App() {
       localStorage.setItem('favoritesHistory', JSON.stringify([favoritedTrail]));
       let favoritedHistory = localStorage.getItem('favoritesHistory');
       console.log(JSON.parse(favoritedHistory))
-      return setFavorites(JSON.parse(favoritedHistory))
+      setFavorites(JSON.parse(favoritedHistory))
     } else if(localHistory && !matchingTrail) {
       let favoritedHistory = JSON.parse(localStorage.getItem('favoritesHistory'))
       favoritedHistory.push(favoritedTrail)
       localStorage.setItem('favoritesHistory', JSON.stringify(favoritedHistory));
-      return setFavorites(favoritedHistory)
+      setFavorites(favoritedHistory)
     }
-    // setFavorites([...favorites, favoritedTrail])
-    // console.log('Favorites:', favorites)
   }
 
   const visitActivityPage = (activity) => {
@@ -73,18 +71,22 @@ function App() {
 
   return (
     <div className="app-container">
-      <Header />
       <Switch>
       <Route exact path="/" render={() => {
         return (
+          <>
+          <Header />
           <Activities
           updateActivity={updateActivity}
         />
+        </>
         )
       }}
       />
       <Route exact path="/:activity" render={({ match } ) => {
         return (
+          <>
+          <Header />
           <ActivityFeed
           selectedActivity={selectedActivity}
           currentActivity={match.params.activity}
@@ -92,11 +94,17 @@ function App() {
           hikingOptions={hikingOptions}
           addToFavorites={addToFavorites}
           />
+          </>
         )
       }}
       />
-      <Route exact path="/favorite" render={() => {
-        <FavoriteFeed favorites={favorites}/>
+      <Route exact path="/favorites" render={() => {
+        return (
+          <>
+          <Header />
+          <FavoriteFeed />
+          </>
+        )
       }}
       />
       </Switch>

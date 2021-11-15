@@ -6,7 +6,6 @@ import './ActivityFeed.css';
 
 const ActivityFeed = ({ selectedActivity, currentActivity, bikingOptions, hikingOptions, addToFavorites }) => {
   let trailData = [];
-  console.log(currentActivity)
 
   if(currentActivity === 'Mountain Biking') {
     trailData = bikingOptions.map(trail => {

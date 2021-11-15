@@ -1,22 +1,25 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import FavoriteCard from '../FavoriteCard/FavoriteCard';
 import './FavoriteFeed.css';
 
 
-const FavoriteFeed = ({ favorites }) => {
-  const favoriteData = favorites.map(favorited => {
+const FavoriteFeed = () => {
+  const favoritedTrails = JSON.parse(localStorage.getItem('favoritesHistory'));
+  console.log('favoritedTrails:',favoritedTrails)
+  let favoriteData;
+  favoriteData = favoritedTrails.map(favorited => {
     return (
       <FavoriteCard
       trail={favorited.trail}
-      city={favorites.city}
+      city={favorited.city}
       key={Math.random()}
       />
     )
   })
 
   return (
-    <div className="favorite-container">
+    <div className="favorites-container">
       { favoriteData }
     </div>
   )
