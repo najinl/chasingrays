@@ -15,7 +15,6 @@ function App() {
   const [hikingOptions, setHikingOptions] = useState([]);
   const [climbingOptions, setClimbingOptions] = useState([]);
   const [favorites, setFavorites] = useState([])
-  // const [retrievedFavorites, getFavorites]= useState([]);
   const history = useHistory();
 
   useEffect(() => {
@@ -65,10 +64,6 @@ function App() {
     history.push(`/${activity}`)
   }
 
-  console.log(selectedActivity)
-  // console.log(currentActivity)
-  console.log(bikingOptions)
-
   return (
     <div className="app-container">
       <Header />
@@ -88,7 +83,6 @@ function App() {
       <Route exact path="/:activity" render={({ match } ) => {
         return (
           <ActivityFeed
-          selectedActivity={selectedActivity}
           currentActivity={match.params.activity}
           bikingOptions={bikingOptions}
           hikingOptions={hikingOptions}

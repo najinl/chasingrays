@@ -1,10 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import ActivityCard from '../ActivityCard/ActivityCard';
 import './ActivityFeed.css';
 
 
-const ActivityFeed = ({ selectedActivity, currentActivity, bikingOptions, hikingOptions, addToFavorites }) => {
+const ActivityFeed = ({ currentActivity, bikingOptions, hikingOptions, addToFavorites }) => {
   let trailData = [];
 
   if(currentActivity === 'Mountain Biking') {

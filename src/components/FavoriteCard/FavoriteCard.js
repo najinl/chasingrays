@@ -3,7 +3,7 @@ import { AiOutlineMinusCircle  } from "react-icons/ai";
 import './FavoriteCard.css';
 
 
-const FavoriteCard = ({ trail, city }) => {
+const FavoriteCard = ({ trail, city, removeFromFavorites }) => {
 
   return (
     <section className="favorite-card">
@@ -11,10 +11,9 @@ const FavoriteCard = ({ trail, city }) => {
         <h3>{trail}</h3>
         <p>{`${city}, Colorado`}</p>
       </div>
-      <AiOutlineMinusCircle className="remove-favorite-btn"/>
+      <AiOutlineMinusCircle className="remove-favorite-btn" onClick={() => removeFromFavorites(trail)}/>
     </section>
   )
 }
-
 
 export default FavoriteCard;
