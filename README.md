@@ -4,7 +4,7 @@
 
 An application for the outdoor junkie who is tired of scouring the internet for good locales to bike, hike, or climb AND the having to look up those location's sea weather in a seperate application, just to figure out it's raining or snowing and repeat the cycle all over again. This application was built utilizing TypeScript, React, React Hooks, and React Router.
 
-Visit the <a href="blahblahblah">deployed site</a>.
+Visit the <a href="https://ray-chasing.herokuapp.com/">deployed site</a>.
 
 ## Snapshot of Application
 
