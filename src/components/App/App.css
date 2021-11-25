@@ -1,6 +1,7 @@
 .app-container {
   text-align: center;
   margin: 0;
-  background-color: #f5eec2;
+  /* background-color: #f5eec2; */
+  background-color: red;
   min-height: 100vh;
 }
