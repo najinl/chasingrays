@@ -18,7 +18,6 @@ At any moment the user is able to navigate back to the home page and choose anot
 
 <table>
     <tr>
-        <td>TypeScript</td>
         <td>JavaScript</td>
         <td>React</td>
         <td>React Router</td>
