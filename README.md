@@ -29,7 +29,6 @@ At any moment the user is able to navigate back to the home page and choose anot
         <td>Fetch API</td>
     </tr>
     </tr>
-        <td><img src="https://cdn.worldvectorlogo.com/logos/typescript.svg" alt="typescript" width="100" height="auto" /></td>
         <td><img src="https://user-images.githubusercontent.com/73092355/119360616-074c6580-bc68-11eb-8ac1-f1ca05b87bf8.png" alt="javascript" width="100" height="auto" /></td>
         <td><img src="https://user-images.githubusercontent.com/73092355/119361040-74f89180-bc68-11eb-845a-29ec9f93f095.png" alt="react" width="100" height="auto" /></td>
         <td><img src="https://user-images.githubusercontent.com/73092355/119361186-9d808b80-bc68-11eb-97ee-05bde2700716.png" alt="react router" width="100" height="auto" /></td>
