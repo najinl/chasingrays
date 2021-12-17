@@ -1,4 +1,4 @@
-import React from 'react';
+import { useMemo } from 'react';
 import WeatherCard from '../WeatherCard/WeatherCard';
 import { AiFillHeart } from "react-icons/ai";
 import './ActivityCard.css';
@@ -9,9 +9,13 @@ const ActivityCard = ({ trail, city, weather, addToFavorites }) => {
   const todayFull = new Date()
   const todayShort = todayFull.toISOString().split('T')[0]
 
-  filteredWeather = weather.filter(day => {
-    return (!day.name.includes('Night') && !day.name.includes('Tonight') && !day.name.includes('This') && day.startTime > todayShort)
-  })
+
+  filteredWeather = useMemo(() => {
+    return weather.filter(day => {
+      return (!day.name.includes('Night') && !day.name.includes('Tonight') && !day.name.includes('This') && day.startTime > todayShort)
+    })
+  }, [weather, todayFull])
+
 
   return (
     <div className="activity-container">
