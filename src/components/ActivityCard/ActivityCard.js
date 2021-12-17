@@ -10,7 +10,7 @@ const ActivityCard = ({ trail, city, weather, addToFavorites }) => {
   const todayShort = todayFull.toISOString().split('T')[0]
 
   filteredWeather = weather.filter(day => {
-    return (!day.name.includes('Night') && !day.name.includes('Tonight') && day.startTime > todayShort)
+    return (!day.name.includes('Night') && !day.name.includes('Tonight') && !day.name.includes('This') && day.startTime > todayShort)
   })
 
   return (
