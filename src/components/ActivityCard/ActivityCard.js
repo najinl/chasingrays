@@ -12,9 +12,9 @@ const ActivityCard = ({ trail, city, weather, addToFavorites }) => {
 
   filteredWeather = useMemo(() => {
     return weather.filter(day => {
-      return (!day.name.includes('Night') && !day.name.includes('Tonight') && !day.name.includes('This') && day.startTime > todayShort)
+      return (!day.name.includes('Night') && !day.name.includes('Tonight') && !day.name.includes('This') &&  !day.name.includes('Today') && day.startTime > todayShort)
     })
-  }, [weather, todayFull])
+  }, [weather, todayShort])
 
 
   return (
